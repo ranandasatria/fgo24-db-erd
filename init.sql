@@ -91,8 +91,6 @@ ALTER COLUMN sinopsis TYPE TEXT;
 INSERT INTO buku(id_buku, isbn, judul, penulis, sinopsis, penerbit, cetakan_ke, tahun_terbit, jumlah_halaman, id_kategori, id_rak, id_petugas)
 VALUES
 ('BUKU-1', '9789791757904', 'Dalih Pembunuhan Massal', 'John Rossa', 'sinopsis', 'Institut Sejarah Sosial Indonesia', 1, '2008', 392 'K1', 'R1', 'PTG-1')
-('BUKU-2', '9789791757904', 'Dalih Pembunuhan Massal', 'John Rossa', 'sinopsis', 'Institut Sejarah Sosial Indonesia', 1, '2008', 392 'K2', 'R2', 'PTG-2')
-
 
 UPDATE buku
 SET sinopsis = 'Buku ini merupakan catatan paling detil dan dengan penelitian terbaik tentang kejadian-kejadian 1965 yang pernah ditulis. Siapa pun yang berniat memahami kejadian-kejadian yang masih menebar mendung di atas bumi Indonesia dan sedikit dipahami oleh sebagian besar masyarakat Indonesia akan memperoleh manfaat sangat besar dengan membaca buku ini.'
