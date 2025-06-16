@@ -1,5 +1,6 @@
 ```mermaid
 erDiagram
+direction LR
     kategori ||--o{ buku : mencakup
     rak_buku ||--o{ buku : menampung
     petugas ||--o{ buku : mengelola
@@ -22,12 +23,12 @@ erDiagram
     }
 
     kategori {
-        string id_kategori 
+        string id_kategori PK
         string nama_kategori
     }
 
     rak_buku {
-        string id_rak_buku 
+        string id_rak_buku PK
         string kode_rak
         int kapasitas
     }
@@ -40,8 +41,8 @@ erDiagram
     peminjam {
         string id_peminjam PK
         string nama_peminjam
-        string no_hp
-        text alamat
+        int no_hp
+        string alamat
     }
 
     transaksi {
