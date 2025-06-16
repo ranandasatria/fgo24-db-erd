@@ -8,49 +8,49 @@ direction LR
     peminjam ||--o{ transaksi : melakukan
 
     buku {
-        string id_buku PK
-        string isbn 
-        string judul
-        string penulis
-        string sinopsis 
-        string penerbit
+        varchar(255) id_buku PK
+        varchar(255) isbn 
+        varchar(255) judul
+        varchar(255) penulis
+        text sinopsis 
+        varchar(255) penerbit
         int cetakan_ke
-        date tanggal_terbit
+        varchar(255) tahun_terbit
         int jumlah_halaman
-        string id_kategori FK
-        string id_rak_buku FK
-        string id_petugas FK
+        varchar(255) id_kategori FK
+        varchar(255) id_rak_buku FK
+        varchar(255) id_petugas FK
     }
 
     kategori {
-        string id_kategori PK
-        string nama_kategori
+        varchar(255) id_kategori PK
+        varchar(255) nama_kategori
     }
 
     rak_buku {
-        string id_rak_buku PK
-        string kode_rak
+        varchar(255) id_rak_buku PK
+        varchar(255) kode_rak
         int kapasitas
     }
 
     petugas {
-        string id_petugas PK
-        string nama_petugas
+        varchar(255) id_petugas PK
+        varchar(255) nama_petugas
     }
 
     peminjam {
-        string id_peminjam PK
-        string nama_peminjam
-        int no_hp
-        string alamat
+        varchar(255) id_peminjam PK
+        varchar(255) nama_peminjam
+        varchar(255) no_hp
+        varchar(255) alamat
     }
 
     transaksi {
-        string id_transaksi PK
-        string id_buku FK
-        string id_peminjam FK
-        string id_petugas FK
-        datetime tanggal_peminjaman
+        varchar(255) id_transaksi PK
+        varchar(255) id_buku FK
+        varchar(255) id_peminjam FK
+        varchar(255) id_petugas FK
+        date tanggal_peminjaman
         date batas_pengembalian
     }
 ```
