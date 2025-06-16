@@ -1,21 +1,20 @@
 ```mermaid
 erDiagram
-direction LR
-    buku ||--o{ kategori : termasuk
-    buku ||--o{ rak_buku : berlokasi
-    buku ||--o{ petugas : dikelola
+    kategori ||--o{ buku : mencakup
+    rak_buku ||--o{ buku : menampung
+    petugas ||--o{ buku : mengelola
     buku ||--o{ transaksi : diproses
     peminjam ||--o{ transaksi : melakukan
 
     buku {
         string id_buku PK
-        int isbn
+        string isbn 
         string judul
         string penulis
-        string sinopsis
-        string nama_penerbit
+        string sinopsis 
+        string penerbit
         int cetakan_ke
-        date tangga_terbit
+        date tanggal_terbit
         int jumlah_halaman
         string id_kategori FK
         string id_rak_buku FK
@@ -23,13 +22,13 @@ direction LR
     }
 
     kategori {
-        string id_kategori PK
+        string id_kategori 
         string nama_kategori
     }
 
     rak_buku {
-        string id_rak_buku PK
-        int no_rak
+        string id_rak_buku 
+        string kode_rak
         int kapasitas
     }
 
@@ -41,16 +40,16 @@ direction LR
     peminjam {
         string id_peminjam PK
         string nama_peminjam
-        int no_hp
-        string alamat
+        string no_hp
+        text alamat
     }
 
     transaksi {
         string id_transaksi PK
         string id_buku FK
         string id_peminjam FK
+        string id_petugas FK
         datetime tanggal_peminjaman
         date batas_pengembalian
-        boolean dikembalikan
     }
 ```
